@@ -1,0 +1,49 @@
+<div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="#">
+            <h3>Create Account</h3>
+            <p style="margin-top:10px;margin-bottom:10px;color:green">{{message}}</p>
+            <!-- <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div> -->
+            <!-- <span>or use your email for registration</span> -->
+            <input type="text" placeholder="FirstName" #firstname />
+            <input type="text" placeholder="LastName" #lastName />
+            <input type="email" placeholder="Email" #email />
+            <input type="number" placeholder="Phone Number" #phone />
+            <input type="password" placeholder="Password" #password />
+            <button (click)="RegisterUser()">Sign Up</button>
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form action="#">
+            <h3>Sign in</h3>
+            <!-- <div class="social-container">
+              <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+              <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <span>or use your account</span> -->
+            <input type="email" placeholder="Email" #emailLogin />
+            <input type="password" placeholder="Password" #passwordLogin />
+            <!-- <a href="#" class="forgot-password">Forgot your password?</a> -->
+            <button (click)="Login()">Sign In</button>
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>To keep connected with us please login with your personal info</p>
+              <button class="ghost" (click)="Signin()" id="signIn">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start journey with us</p>
+              <button class="ghost" (click)="Signup()" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>

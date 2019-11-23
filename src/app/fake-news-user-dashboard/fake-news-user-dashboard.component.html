@@ -1,0 +1,57 @@
+<div class="container-fluid" style="background: whitesmoke;">
+<div class="row">
+    <div class="col-sm-2">
+     
+    </div>    
+<div class="col-sm-8">
+    <br>
+    <!-- <div class="add-news-block" style="background:black;padding:20px 20px;box-shadow: 1px 1px 4px #bbbbbb"> -->
+<div class="add-news-block" style="padding: 20px 20px;background:rgba(0, 128, 128, 0.8);border-radius:5px">
+    <div class="heading">
+    <h2 style="color:#fff;">Upload News</h2>
+    <hr>
+    <p style="color:red">{{showMessage}}</p>
+    </div>
+    <br>
+    <!-- <label style="font-size: 18px;margin-bottom: 15px;"><b>Select Category</b></label>
+    <br>
+    <select class="CategorySelect" #category style="width: 30%;height:30px;margin-bottom: 15px;"> -->
+            <!-- <option *ngFor="let data of topics" value={{data.name}}>{{data.name}}</option> -->
+            <!-- <option>Politics</option>
+            <option>Celebrity</option>
+    </select> -->
+    <br>
+   <div class="add-title">    
+    <input type=text name="title" placeholder="Title of News" #title />
+    </div>
+    <!-- <div class="add-Image">
+            <input type="file" name="NewsImage"  id="NewsImage" accept="image/*" #file />
+    </div>     -->
+    <br>
+    <ckeditor
+    [(ngModel)]="content"
+    [config]="config"
+    [readonly]="false"
+    (change)="onChange($event)"
+    (editorChange)="onEditorChange($event)" 
+    (ready)="onReady($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    (contentDom)="onContentDom($event)"
+    (fileUploadRequest)="onFileUploadRequest($event)"
+    (fileUploadResponse)="onFileUploadResponse($event)"
+    (paste)="onPaste($event)"
+    (drop)="onDrop($event)"
+    debounce="500">
+  </ckeditor>
+  <br>
+   <button class="btn btn-light"  (click)="AddNews()">Upload News</button>
+</div>
+</div>
+<div class="col-sm-2">
+
+</div>    
+</div>
+</div>
+<br>
+<app-fake-news-footer></app-fake-news-footer>    

@@ -1,0 +1,81 @@
+<div class="container-fluid first">
+<div class="row">
+<div class="col-sm-8">
+   <div class="brand-info">
+       <div class="brand-title">
+      <h2>Fake News Detector Using Crowd Sourcing</h2>
+      </div>
+      <div class="brand-description">
+       <p>First, fake news is intentionally written to mislead readers to believe false information, which makes it difficult and nontrivial to detect based on news content; therefore, we need to include auxiliary information, such as user social engagements on social media, to help make a determination.</p>
+       <a routerLink="/browse" class="button"><i class="fas fa-newspaper"></i> Explore</a>
+      </div>  
+   </div> 
+</div>
+<div class="col-sm-1">
+ 
+</div>
+<div class="col-sm-3">
+        <div class="wrapper" *ngIf="show">
+                <div class="container">
+                  <form autocomplete="off" action="">
+                    <div class="group">
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email" #email />
+                    </div>
+                    <div class="group">
+                      <label for="password">Password:</label>
+                      <input id="password" type="password" name="password" #password />
+                    </div>
+                    <br>
+                    <input (click)="Login()" type="submit" value="Login" id="submit">
+                  </form>
+                </div>
+              </div>
+    
+</div>    
+</div>
+</div>    
+<div class="container-fluid second">
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="second-title">
+        <h3>Things You Can Do</h3>
+        </div>
+     </div>   
+    </div>    
+<div class="row">
+<div class="col-sm-4">
+        <div class="card" style="width: 20rem;text-align: center;height: 350px;">
+                <img class="card-img-top" src="/assets/images/images.jpg" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="button">Go somewhere</a>
+                </div>
+              </div>
+
+</div>
+<div class="col-sm-4">
+        <div class="card" style="width: 20rem;text-align: center;height: 350px;">
+                <img class="card-img-top" src="/assets/images/images.jpg" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="button">Go somewhere</a>
+                </div>
+              </div>
+
+</div>
+<div class="col-sm-4">
+        <div class="card" style="width: 20rem;text-align: center;height: 350px;">
+                <img class="card-img-top" src="/assets/images/images.jpg" alt="Card image cap">
+                <div class="card-block">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="button">Go somewhere</a>
+                </div>
+              </div>
+</div>
+</div>
+</div>
+<app-fake-news-footer></app-fake-news-footer>    
