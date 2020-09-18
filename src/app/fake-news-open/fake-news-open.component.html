@@ -1,0 +1,80 @@
+<div class="container-fluid" style="background: whitesmoke;">
+<div class="row">
+ <div class="col-sm-2">
+ </div>  
+<div class="col-sm-6">
+<div class="article">
+        <!-- <div class="article-category">
+                <a routerLink="" class="category">Politics</a>
+        </div> -->
+    <div class="article-title" style="margin-top:10px;">
+      <h3>{{headLine}}</h3>
+     </div>
+     <div class="article-date">
+         <div class="left">
+           <p><i class="fas fa-clock"></i> {{createdDate}}</p>
+           <p><i class="fas fa-eye"></i> {{views}}</p> 
+          </div>
+          <div class="right">  
+                <!-- <ul class="menu">
+                        <li><a href=""><i class="fa fa-facebook" style="font-size:24px"></i></a></li>
+                        <li>Twitter</li>
+                        <li></li>
+                        <li>PHP</li>
+                </ul> -->
+      </div>
+     </div>
+     <div class="article-category">
+         <a routerLink="" class="category">Politics</a>
+     </div>  
+     <div class="article-image">
+      <img src="https://picsum.photos/600/300/?image=10">
+     </div>
+     <div class="article-vote">
+       <button class="btn btn-success" (click)="Upvote()" [disabled]="!voted"><i class="fas fa-check-circle"></i> {{upvoteString}}</button>
+       <button class="btn btn-danger" (click)="Downvote()" [disabled]="!voted"><i class="fas fa-times-circle"></i> {{downvoteString}}</button>
+     </div>   
+     <div class="article-content">
+         <p [innerHtml]="newsData">
+         </p>
+       <br>
+         <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+        <br>
+<ckeditor
+    [(ngModel)]="content"
+    [config]="config"
+    [readonly]="false"
+    (change)="onChange($event)"
+    (editorChange)="onEditorChange($event)" 
+    (ready)="onReady($event)"
+    (focus)="onFocus($event)"
+    (blur)="onBlur($event)"
+    (contentDom)="onContentDom($event)"
+    (fileUploadRequest)="onFileUploadRequest($event)"
+    (fileUploadResponse)="onFileUploadResponse($event)"
+    (paste)="onPaste($event)"
+    (drop)="onDrop($event)"
+    debounce="500">
+  </ckeditor>
+  <br>
+  <!-- <input type="file" name="pic" #file accept="image/*"> -->
+  <button class="btn btn-success" (click)="comment()">Comment</button>
+   <br> 
+    <div class="container darker" *ngFor="let comment of comments">
+      <img src="/assets/images/default-image.png" alt="Avatar" class="right" style="width:100%;">
+      <p [innerHtml]="comment.commentData"></p>
+      <span class="time-left" style="float: right;margin-top:-20px;"><b>{{comment.user.firstName}}</b></span>
+    </div>
+    
+
+      </div>  
+ </div>   
+</div>
+<div class="col-sm-4">
+    <div class="adv-slot">
+        <p>Advertisement</p>
+     </div> 
+</div>    
+</div>    
+</div>    
+<app-fake-news-footer></app-fake-news-footer>    

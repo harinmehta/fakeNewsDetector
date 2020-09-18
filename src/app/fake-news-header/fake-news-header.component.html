@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md  navbar-dark" style="background-color:white;">
+    <!-- <a class="navbar-brand" routerLink="/">Fake News Detector</a> -->
+    <a class="navbar-brand" routerLink="/"><img src="/assets/images/fnd.png" class="brand-image" style="width:250px;height:50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+              <a class="nav-link" routerLink="/browse" style="color: black;"><i class="fas fa-newspaper"></i> Explore</a>
+          </li>
+          <li class="nav-item" *ngIf="user">
+              <a class="nav-link" routerLink="/user-dashboard/{{firstname}}/{{userid}}" style="color: black;">{{firstname}} {{lastname}}</a>
+            </li>
+        <li class="nav-item" *ngIf="!user">
+          <a class="nav-link" routerLink="/login" style="color: black;"><i class="fas fa-sign-in-alt"></i> SignUp</a>
+        </li>
+        <li class="nav-item" *ngIf="user">
+          <a class="nav-link" (click)="logout()" style="color: black;"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </li>
+      </ul>
+    </div>  
+</nav>

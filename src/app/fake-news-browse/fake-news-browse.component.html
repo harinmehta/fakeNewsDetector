@@ -1,0 +1,36 @@
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-8">
+        <div class="main">
+                <ul class="cards">
+                  <li class="cards_item" *ngFor="let news of news">
+                    <div class="card">
+                      <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+                      <div class="card_content">
+                        <h2 class="card_title">{{news.headLine}}</h2>
+                        <p class="card_text" [innerHtml]="news.newsData"></p>
+                        <a class="btn card_btn" routerLink="/browse/news/{{news.headLine}}/{{news.id}}">Read More</a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+</div>
+
+<div class="col-sm-4">
+        <div class="f-title">
+                <h1> Trending News </h1>
+              </div>
+              <div class="widget-content popular-posts">
+                <ul>
+                  <li *ngFor="let data of trendingnews">
+                    <div class="item-thumbnail">
+                      <a title="" routerLink="/browse/news/{{data.headLine}}/{{data.id}}"> <img  class="circle" src="https://2.bp.blogspot.com/-FF3UZkrY-ME/VwLGWIjIUzI/AAAAAAAAB3E/81FW7OvXAOcPUJl0ZDfDMV2VyIVGTSoAw/s72-c/cover.jpg" border="0" height="72" width="72"> </a> <span class="title"><a  routerLink="/browse/news/{{data.headLine}}/{{data.id}}">{{data.headLine}}</a></span> </div>
+                    <div style="clear: both;"></div>
+                  </li>       
+                </ul>
+              </div>
+
+</div>    
+</div>    
+</div>    
